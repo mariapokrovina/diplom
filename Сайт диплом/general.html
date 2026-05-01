@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-КУБ — Центр цифрового образования</title>
+    <link rel="stylesheet" href="general.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Лого на панели.svg" alt="Логотип IT-КУБ">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Направления</a></li>
+            <li><a href="#">Педагоги</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li><a href="#">Запись</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero секция -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <div class="blue-circle">
+                        <img src="icons_general/1764002271-no-bg-preview (carve.photos) 1.png" 
+                             class="children-img" alt="Дети в IT-Кубе">
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <div class="hero-logo">
+                        <img src="icons_general/logoitcube.png" class="logo-image" alt="IT-КУБ">
+                    </div>
+                    <h1 class="hero-title">
+                        ЦЕНТР ЦИФРОВОГО ОБРАЗОВАНИЯ ДЕТЕЙ<br>
+                        <span class="highlight">«IT-КУБ»</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        на базе <strong>МБУ ДО «ДВОРЕЦ ТВОРЧЕСТВА ДЕТЕЙ И МОЛОДЁЖИ»</strong><br>
+                        города Ростова-на-Дону
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Статистика -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="stats-title">«IT-куб» это</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">20</div>
+                    <div class="stat-text">образовательных программ в сфере ИТ</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">300+</div>
+                    <div class="stat-text">филиалов по всей стране</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2000+</div>
+                    <div class="stat-text">детей и подростков ежегодно получают знания</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Информационные карточки -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <img src="icons_general/1771003454229a-no-bg-preview (carve.photos) 1.png" 
+                             alt="Задачи проекта" class="custom-icon">
+                    </div>
+                    <h3 class="info-title">Одной из задач</h3>
+                    <div class="info-text">
+                        <p>национального проекта <strong>«Образование»</strong> является формирование общедоступной системы дополнительного образования детей.</p>
+                        <p>На решение указанной задачи направлена реализация федеральных проектов <strong>«Успех каждого ребенка»</strong> и <strong>«Цифровая образовательная среда»</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <img src="icons_general/Лого на панели (1).png" 
+                             alt="IT-куб" class="custom-icon">
+                    </div>
+                    <h3 class="info-title">«IT-куб»</h3>
+                    <div class="info-text">
+                        <p>это инновационная площадка дополнительного образования детей, направленная на развитие знаний и навыков в области программирования.</p>
+                        <p><strong>Для ребенка это центр притяжения, место куда хочется вернуться.</strong></p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <img src="icons_general/17710036429759-no-bg-preview (carve.photos) 1.png" 
+                             alt="Цель проекта" class="custom-icon">
+                    </div>
+                    <h3 class="info-title">Целью реализации проекта</h3>
+                    <div class="info-text">
+                        <p><strong>«IT-куб»</strong> — достижение лидирующей позиции России на глобальном рынке информационных технологий.</p>
+                        <p>Программы разработаны для детей от 8 лет и отвечают современным запросам ИТ-отрасли.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Галерея фото детей -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-wrapper">
+                <div class="gallery-container" id="galleryContainer"></div>
+                <div class="gallery-navigation">
+                    <button class="nav-button" id="prevButton" aria-label="Предыдущее фото">←</button>
+                    <div class="gallery-counter">
+                        <span id="currentPhoto">1</span> / <span id="totalPhotos">5</span>
+                    </div>
+                    <button class="nav-button" id="nextButton" aria-label="Следующее фото">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="icons_general/computer_icon.svg" alt="Оборудование" class="feature-icon-img">
+                    </div>
+                    <h3 class="feature-title">Высокотехнологичное оборудование и современное оформление</h3>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="icons_general/book_icon.svg" alt="Программы" class="feature-icon-img">
+                    </div>
+                    <h3 class="feature-title">Востребованные образовательные программы, разработанные с лидерами рынка</h3>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="icons_general/teacher_icon.svg" alt="Кадры" class="feature-icon-img">
+                    </div>
+                    <h3 class="feature-title">Квалифицированные постоянно развивающиеся кадры</h3>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="icons_general/kidsandteens_icon.svg" alt="Возраст" class="feature-icon-img">
+                    </div>
+                    <h3 class="feature-title">Дети и подростки от 6 до 18 лет</h3>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="icons_general/clock_icon.svg" alt="Время" class="feature-icon-img">
+                    </div>
+                    <h3 class="feature-title">120 минут 1–2 раза в неделю</h3>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="icons_general/groupkids_icon.svg" alt="Группа" class="feature-icon-img">
+                    </div>
+                    <h3 class="feature-title">12 детей в каждой группе</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Галерея помещений -->
+    <section class="gallery-section rooms-gallery">
+        <div class="container">
+            <div class="gallery-wrapper">
+                <div class="gallery-container" id="roomsGalleryContainer"></div>
+                <div class="gallery-navigation">
+                    <button class="nav-button prev-room" aria-label="Предыдущее фото">←</button>
+                    <div class="gallery-counter">
+                        <span class="current-room">1</span> / <span class="total-rooms">5</span>
+                    </div>
+                    <button class="nav-button next-room" aria-label="Следующее фото">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Учредители -->
+    <section class="founders-section">
+        <div class="container">
+            <h2 class="founders-title">Учредители</h2>
+            <div class="founders-grid">
+                <div class="founder-item"><img src="uchrediteli_general/uch1.svg" alt="Учредитель 1" class="founder-logo"></div>
+                <div class="founder-item"><img src="uchrediteli_general/uch2.svg" alt="Учредитель 2" class="founder-logo"></div>
+                <div class="founder-item"><img src="uchrediteli_general/uch3.svg" alt="Учредитель 3" class="founder-logo"></div>
+                <div class="founder-item"><img src="uchrediteli_general/uch4.svg" alt="Учредитель 4" class="founder-logo"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Партнеры -->
+    <section class="partners-section">
+        <div class="container">
+            <h2 class="partners-title">Партнеры проекта</h2>
+            <div class="partners-grid">
+                <div class="partner-item"><img src="partners_general/partners1.svg" alt="Ростсельмаш" class="partner-logo"></div>
+                <div class="partner-item"><img src="partners_general/partners2.svg" alt="LEGO Education" class="partner-logo"></div>
+                <div class="partner-item"><img src="partners_general/partners3.svg" alt="Агентство инноваций" class="partner-logo"></div>
+                <div class="partner-item"><img src="partners_general/partners4.svg" alt="Партнер" class="partner-logo"></div>
+                <div class="partner-item"><img src="partners_general/partners5.svg" alt="ФИРОН" class="partner-logo"></div>
+                <div class="partner-item"><img src="partners_general/partners6.svg" alt="1С" class="partner-logo"></div>
+                <div class="partner-item"><img src="partners_general/partners7.svg" alt="Партнер" class="partner-logo"></div>
+                <div class="partner-item"><img src="partners_general/partners8.svg" alt="Сбер" class="partner-logo"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-section">
+                    <img src="Лого на панели.svg" alt="IT-КУБ" class="footer-logo">
+                </div>
+                <div class="footer-about">
+                    <h3 class="footer-title">КТО МЫ</h3>
+                    <p class="footer-text">
+                        Центр цифрового образования «IT-куб» — новый формат технической подготовки школьников от 6 до 18 лет в направлении информационных технологий.
+                    </p>
+                </div>
+                <div class="footer-menu">
+                    <h3 class="footer-title">МЕНЮ</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="#">Направления</a></li>
+                        <li><a href="#">Педагоги</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Запись</a></li>
+                        <li><a href="#">Официальные документы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contacts">
+                    <h3 class="footer-title">КОНТАКТНАЯ ИНФОРМАЦИЯ</h3>
+                    <div class="footer-contact-item">
+                        <strong>Адрес:</strong><br>
+                        Большая Садовая 53,<br>Ростов-на-Дону
+                    </div>
+                    <div class="footer-contact-item">
+                        <strong>Email:</strong><br>
+                        <a href="mailto:it-cube@it-cube161.ru">it-cube@it-cube161.ru</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024–2026 Центр цифрового образования «IT-куб». Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="general.js"></script>
+</body>
+</html>
