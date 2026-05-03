@@ -1,7 +1,8 @@
-// script.js
+// script.js - Главная страница IT-КУБ
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Данные для галерей
+    // Данные для галереи детей
     const photos = [
         'фото.png',
         'L (4).webp',
@@ -10,12 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
         'L (10).webp'
     ];
 
+    // Данные для галереи помещений
     const roomsPhotos = [
-        'pomeshenia_general\Помещение1.webp',
-        'pomeshenia_general\Помещение 2.webp',
-        'pomeshenia_general\Помещение 3.webp',
-        'pomeshenia_general\Помещение 4.webp',
-        'pomeshenia_general\Помещение 5.webp'
+        'pomeshenia_general/Помещение1.webp',
+        'pomeshenia_general/Помещение 2.webp',
+        'pomeshenia_general/Помещение 3.webp',
+        'pomeshenia_general/Помещение 4.webp',
+        'pomeshenia_general/Помещение 5.webp'
     ];
 
     // Инициализация галерей
@@ -25,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Универсальная функция для галерей
+ * Универсальная функция инициализации галереи
  */
 function initGallery(containerId, prevBtnId, nextBtnId, currentClass, totalClass, photosArray, photosPerView, customPrev = null, customNext = null) {
     const container = document.getElementById(containerId);
@@ -34,7 +36,10 @@ function initGallery(containerId, prevBtnId, nextBtnId, currentClass, totalClass
     const currentSpan = document.querySelector(`.${currentClass}`) || document.getElementById(currentClass);
     const totalSpan = document.querySelector(`.${totalClass}`) || document.getElementById(totalClass);
 
-    if (!container || !prevBtn || !nextBtn || !currentSpan || !totalSpan) return;
+    if (!container || !prevBtn || !nextBtn || !currentSpan || !totalSpan) {
+        console.warn(`Галерея ${containerId} не инициализирована: отсутствуют элементы`);
+        return;
+    }
 
     let currentPosition = 0;
     const totalPositions = Math.max(1, photosArray.length - photosPerView + 1);
@@ -52,6 +57,7 @@ function initGallery(containerId, prevBtnId, nextBtnId, currentClass, totalClass
             img.src = photosArray[i];
             img.alt = `Фото ${i + 1}`;
             img.className = 'gallery-photo';
+
             img.onerror = () => {
                 img.src = 'https://via.placeholder.com/400x300?text=Фото+не+найдено';
             };
@@ -70,13 +76,12 @@ function initGallery(containerId, prevBtnId, nextBtnId, currentClass, totalClass
     }
 
     function goNext() {
-        if (currentPosition < totalPositions - 1) currentPosition++;
-        else currentPosition = 0;
+        currentPosition = (currentPosition + 1) % totalPositions;
         updateGallery();
     }
 
     function goPrev() {
-        if (currentPosition > 0) currentPosition--;
+        currentPosition = (currentPosition - 1 + totalPositions) % totalPositions;
         updateGallery();
     }
 
@@ -89,5 +94,6 @@ function initGallery(containerId, prevBtnId, nextBtnId, currentClass, totalClass
     container.addEventListener('mouseenter', () => clearInterval(autoplay));
     container.addEventListener('mouseleave', () => autoplay = setInterval(goNext, 5000));
 
+    // Инициализация
     updateGallery();
-}
+};

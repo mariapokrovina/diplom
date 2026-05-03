@@ -301,7 +301,7 @@ body {
 .gallery-item {
     flex: 0 0 calc(33.333% - 14px);
     max-width: calc(33.333% - 14px);
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     opacity: 0;

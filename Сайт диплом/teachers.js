@@ -1,17 +1,18 @@
 // ====================== СТРАНИЦА ПЕДАГОГИ ======================
 
-function createTeamCard(name, directions) {
+function createTeamCard(person) {
     return `
         <div class="team-card">
             <div class="team-image">
-                <!-- ИЗОБРАЖЕНИЕ: Фото педагога (квадратное или прямоугольное) -->
-                <img src="https://via.placeholder.com/300x300/e0f0ff/1C75BC?text=Фото" 
-                     alt="${name}">
+                <!-- ИЗОБРАЖЕНИЕ: Фото педагога -->
+                <img src="${person.photo}" 
+                     alt="${person.name}"
+                     onerror="this.src='https://via.placeholder.com/300x300/e0f0ff/1C75BC?text=Фото'">
             </div>
             <div class="team-info">
-                <div class="team-name">${name}</div>
+                <div class="team-name">${person.name}</div>
                 <div class="team-position">
-                    ${directions.join('<br>')}
+                    ${person.position}
                 </div>
             </div>
         </div>
@@ -24,30 +25,95 @@ function initTeamPage() {
 
     if (!adminGrid || !teachersGrid) return;
 
-    // Администрация центра (6 человек)
+    // ==================== АДМИНИСТРАЦИЯ ЦЕНТРА ====================
     const admins = [
-        { name: "Иванов Иван Иванович", directions: ["Пиктомир", "Робототехника"] },
-        { name: "Иванов Иван Иванович", directions: ["Пиктомир", "Робототехника"] },
-        { name: "Иванов Иван Иванович", directions: ["Пиктомир", "Робототехника"] },
-        { name: "Иванов Иван Иванович", directions: ["Пиктомир", "Робототехника"] },
-        { name: "Иванов Иван Иванович", directions: ["Пиктомир", "Робототехника"] }
+        {
+            name: "Дмитрий Буланов",
+            position: "Заведующий",
+            photo: "teacher_1.png"
+        },
+        {
+            name: "Елена Букатова",
+            position: "Старший методист",
+            photo: "teacher_2.png"
+        },
+        {
+            name: "Алия Уразгильдеева",
+            position: "Старший методист",
+            photo: "teacher_3.png"
+        },
+        {
+            name: "Оксана Лагутина",
+            position: "Методист",
+            photo: "teacher_4.png"
+        },
+        {
+            name: "Максим Домрин",
+            position: "Методист",
+            photo: "teacher_6.png"
+        },
+        {
+            name: "Виктория Скобелина",
+            position: "Лаборант",
+            photo: "teacher_5.png"
+        }
+        // Добавляйте остальных администраторов
     ];
 
-    // Педагогический состав (9 человек)
-    const teachers = Array(9).fill({
-        name: "Иванов Иван Иванович",
-        directions: ["Пиктомир", "Робототехника"]
-    });
+    // ==================== ПЕДАГОГИЧЕСКИЙ СОСТАВ ====================
+    const teachers = [
+        {
+            name: "Смирнова Екатерина Викторовна",
+            position: "Педагог<br>Пиктомир",
+            photo: "teachers/smirnova.jpg"
+        },
+        {
+            name: "Кузнецов Дмитрий Олегович",
+            position: "Педагог<br>Робототехника",
+            photo: "teachers/kuznetsov.jpg"
+        },
+        {
+            name: "Васильева Ольга Сергеевна",
+            position: "Педагог<br>Программирование на Scratch",
+            photo: "teachers/vasileva.jpg"
+        },
+        {
+            name: "Морозов Алексей Николаевич",
+            position: "Педагог<br>3D-моделирование",
+            photo: "teachers/morozov.jpg"
+        },
+        {
+            name: "Лебедева Мария Андреевна",
+            position: "Педагог<br>Пиктомир",
+            photo: "teachers/lebedeva.jpg"
+        },
+        {
+            name: "Фёдоров Павел Игоревич",
+            position: "Педагог<br>Робототехника, Arduino",
+            photo: "teachers/fedorov.jpg"
+        },
+        {
+            name: "Попова Анастасия Дмитриевна",
+            position: "Педагог<br>Визуальное программирование",
+            photo: "teachers/popova.jpg"
+        },
+        {
+            name: "Соколов Игорь Владимирович",
+            position: "Педагог<br>Кибербезопасность",
+            photo: "teachers/sokolov.jpg"
+        },
+        {
+            name: "Ковалёва Дарья Александровна",
+            position: "Педагог<br>Пиктомир",
+            photo: "teachers/kovaleva.jpg"
+        }
+    ];
 
     // Заполняем администрацию
-    adminGrid.innerHTML = admins.map(admin => 
-        createTeamCard(admin.name, admin.directions)
-    ).join('');
+    adminGrid.innerHTML = admins.map(person => createTeamCard(person)).join('');
 
     // Заполняем педагогический состав
-    teachersGrid.innerHTML = teachers.map(teacher => 
-        createTeamCard(teacher.name, teacher.directions)
-    ).join('');
+    teachersGrid.innerHTML = teachers.map(person => createTeamCard(person)).join('');
 
     // Плавное появление карточек
     const allCards = document.querySelectorAll('.team-card');
@@ -55,7 +121,7 @@ function initTeamPage() {
         card.style.opacity = '0';
         card.style.transform = 'translateY(30px)';
         setTimeout(() => {
-            card.style.transition = `all 0.6s ease ${index * 40}ms`;
+            card.style.transition = `all 0.6s ease ${index * 50}ms`;
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
         }, 100);
