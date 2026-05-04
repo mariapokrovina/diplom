@@ -1,0 +1,400 @@
+/* ====================== СТРАНИЦА КОНТАКТЫ ====================== */
+/* ============================================
+   БАЗОВЫЕ СТИЛИ
+   ============================================ */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Circe ExtraBold', sans-serif;
+    padding-top: 10px; /* Отступ для фиксированной навигации */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; /* Вместо width: 100% */
+    z-index: 1000;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1C75BC;
+    padding: 10px 136px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 98px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #D9D9D9;
+}
+.contacts-section {
+    padding: 80px 20px 120px;
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 180px);
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    color: #1C75BC;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    color: #1C75BC;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* Информация об адресе */
+.contact-info h2 {
+    font-size: 24px;
+    color: #1C75BC;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.address {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1e40af;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Карта */
+.map-container {
+    margin: 40px 0 60px 0;
+    box-shadow: 0 15px 40px rgba(28, 117, 188, 0.15);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Контактные данные */
+.contact-details {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #374151;
+}
+
+.email-link {
+    color: #1C75BC;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
+/* ====================== ФОРМА ОБРАТНОЙ СВЯЗИ ====================== */
+
+.feedback-form-container {
+    max-width: 680px;
+    margin: 0 auto;
+    background: white;
+    padding: 50px 40px 45px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.form-title {
+    text-align: center;
+    color: #1C75BC;
+    font-size: 28px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+}
+
+/* Поля формы — фиксированные по ширине и центрированные */
+.form-group {
+    width: 100%;
+    max-width: 520px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 17px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1C75BC;
+    box-shadow: 0 0 0 4px rgba(28, 117, 188, 0.12);
+}
+
+/* Стили для выпадающего списка */
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%231C75BC' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 14px;
+}
+
+/* Текстареа */
+.form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+/* Кнопка отправки */
+.submit-btn {
+    margin-top: 15px;
+    background: #1C75BC;
+    color: white;
+    padding: 16px 52px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 220px;
+}
+
+.submit-btn:hover {
+    background: #2563eb;
+    transform: translateY(-3px);
+}
+
+.submit-btn:active {
+    transform: scale(0.97);
+}
+
+/* Сообщение об успехе / ошибке */
+.form-message {
+    margin-top: 25px;
+    padding: 16px 24px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    max-width: 520px;
+    display: none;
+}
+
+.form-message.success {
+    background: #d1fae5;
+    color: #065f46;
+    display: block;
+}
+
+.form-message.error {
+    background: #fee2e2;
+    color: #991b1b;
+    display: block;
+}
+/* ============================================
+   ПОДВАЛ
+   ============================================ */
+.footer {
+    background-color: #1C75BC;
+    color: white;
+    padding: 50px 20px 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-logo-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.footer-logo {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+.footer-about {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.footer-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-contact-item {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+}
+
+.footer-contact-item strong {
+    color: white;
+    font-weight: 600;
+}
+
+.footer-email {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    word-break: break-all;
+}
+
+.footer-email:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+/* ====================== АДАПТИВНОСТЬ ====================== */
+
+@media (max-width: 768px) {
+    .contacts-section {
+        padding: 60px 15px 80px;
+    }
+
+    .section-title {
+        font-size: 34px;
+    }
+
+    .feedback-form-container {
+        padding: 40px 20px 35px;
+    }
+
+    .form-title {
+        font-size: 24px;
+    }
+
+    .form-group {
+        max-width: 100%;
+    }
+
+    .submit-btn {
+        min-width: 100%;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-container {
+        margin: 30px 0 40px 0;
+    }
+}
