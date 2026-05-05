@@ -65,14 +65,16 @@ body {
     display: inline-flex;
     align-items: center;
     color: #1C75BC;
-    font-size: 18px;
+    font-size: 24px;
     text-decoration: none;
-    margin-bottom: 25px;
+    margin: 40px 0 25px 0;
     font-weight: 500;
+    transition: color 0.3s ease; /* Плавная смена только цвета текста */
 }
 
 .back-button:hover {
-    text-decoration: underline;
+    color: #b9b9b9; /* Серый цвет текста при наведении */
+    text-decoration: none; /* Гарантированно убираем подчёркивание */
 }
 
 .section-title {
