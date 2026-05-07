@@ -6,11 +6,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Получаем данные
 $email = trim($_POST['email'] ?? '');
 $message = trim($_POST['message'] ?? '');
 
-// Простая валидация
 if (empty($email) || empty($message)) {
     echo json_encode(['status' => 'error', 'message' => 'Заполните все поля']);
     exit;
@@ -26,7 +24,6 @@ if (strlen($message) < 10) {
     exit;
 }
 
-// Настройка получателя
 $to = "pokrovinam@gmail.com";                    // ← Замените на реальный email центра
 $subject = "Новое сообщение с сайта IT-КУБ";
 
@@ -35,13 +32,11 @@ $body .= "Email отправителя: " . $email . "\n\n";
 $body .= "Сообщение:\n" . $message . "\n\n";
 $body .= "Дата: " . date('d.m.Y H:i:s');
 
-// Заголовки
 $headers = "From: pokrovinam@gmail.com\r\n";
 $headers .= "Reply-To: " . $email . "\r\n";
 $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
-// Отправка письма
 if (mail($to, $subject, $body, $headers)) {
     echo json_encode(['status' => 'success', 'message' => 'Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.']);
 } else {
